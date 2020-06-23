@@ -1,7 +1,6 @@
 package com.vmware.demos.awskms.signingdemoaws;
 
 import java.io.UnsupportedEncodingException;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 import org.springframework.stereotype.Service;

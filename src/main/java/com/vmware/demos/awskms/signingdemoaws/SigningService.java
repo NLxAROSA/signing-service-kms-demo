@@ -3,6 +3,7 @@ package com.vmware.demos.awskms.signingdemoaws;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import software.amazon.awssdk.core.SdkBytes;
@@ -20,9 +21,9 @@ public class SigningService {
     private final KmsClient kmsClient;
     private final String keyId;
 
-    public SigningService(KmsClient awsKms) {
+    public SigningService(KmsClient awsKms, @Value("${keyid}") String keyId) {
         this.kmsClient = awsKms;
-        this.keyId = "04325ca5-b629-4b6e-b05a-677a22c69beb";
+        this.keyId = keyId;
     }
 
     public byte[] signMessage(String message) throws UnsupportedEncodingException, NoSuchAlgorithmException {

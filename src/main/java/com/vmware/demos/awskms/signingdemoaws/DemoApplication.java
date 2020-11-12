@@ -24,7 +24,6 @@ public class DemoApplication {
 		return args -> {
 			String message = "Hello signing world!";
 			byte[] signature = signingService.signMessage(message);
-			LOGGER.info("Signed message {}, signature is {}", message, signature);
 			Boolean isValidSignature = signingService.isValidSignature(message, signature);
 			LOGGER.info("Valid signature? (expected: true) -> {}", isValidSignature);
 			try {
